@@ -25,9 +25,7 @@ public class MqttTest : MonoBehaviour {
 		// 消息接收事件
 		mqttClient.MqttMsgPublishReceived += msgReceived;  
 		// 连接
-		mqttClient.Connect("Client ID", "admin", "password"); 
-		// 订阅服务器返回消息
-		mqttClient.Subscribe(new string[] { "Chat/HD_JoinChat" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });  
+		mqttClient.Connect("Client ID", "admin", "password");
 		// 发送登录消息
 		mqttClient.Publish("Login/HD_Login/1", Encoding.UTF8.GetBytes("{\"userName\": \"username\",\"passWord\": \"Hello,anyone!\"}")); 
 	}
